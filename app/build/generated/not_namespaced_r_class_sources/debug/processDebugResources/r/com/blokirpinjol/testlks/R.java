@@ -6143,7 +6143,7 @@ public final class R {
     public static final int btnDelete=0x7f080033;
     public static final int btnEdit=0x7f080034;
     public static final int btnLogin=0x7f080035;
-    public static final int btnRegis=0x7f080036;
+    public static final int btnRegistrasi=0x7f080036;
     public static final int buttonPanel=0x7f080037;
     public static final int cache_measures=0x7f080038;
     public static final int center=0x7f080039;

@@ -1205,7 +1205,7 @@ int id btnAdd 0x7f080032
 int id btnDelete 0x7f080033
 int id btnEdit 0x7f080034
 int id btnLogin 0x7f080035
-int id btnRegis 0x7f080036
+int id btnRegistrasi 0x7f080036
 int id buttonPanel 0x7f080037
 int id cache_measures 0x7f080038
 int id center 0x7f080039

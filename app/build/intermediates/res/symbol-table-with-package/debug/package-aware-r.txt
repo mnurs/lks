@@ -1206,7 +1206,7 @@ id btnAdd
 id btnDelete
 id btnEdit
 id btnLogin
-id btnRegis
+id btnRegistrasi
 id buttonPanel
 id cache_measures
 id center

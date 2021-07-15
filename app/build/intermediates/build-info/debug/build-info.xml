@@ -7,22 +7,22 @@
     format="10"
     ir-eligibility="COMPATIBLE"
     plugin-version="3.3.2"
-    timestamp="1626318163055"
+    timestamp="1626321562980"
     token="-1643923331434675494"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="722" />
+        duration="396" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="50" />
+        duration="56" />
     <task
         name="verifier"
-        duration="6" />
+        duration="22" />
 
     <artifact
         location="D:\TestLks\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -74,17 +74,20 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1626316793372"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1626321167653"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\TestLks\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\TestLks\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1626318163055"
+        timestamp="1626321562980"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\TestLks\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
