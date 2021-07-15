@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestLks</string>
+    <string name="title_activity_menu_detail">MenuDetail</string>
+
+    <!--BaseURL For API-->
+    <string name="base_url">https://lks2.000webhostapp.com/</string>
+</resources>
