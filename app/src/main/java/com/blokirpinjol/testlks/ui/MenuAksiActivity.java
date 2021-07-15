@@ -33,7 +33,13 @@ public class MenuAksiActivity extends AppCompatActivity implements View.OnClickL
         txtName = (EditText)findViewById(com.blokirpinjol.testlks.R.id.txtName);
         txtDesc = (EditText)findViewById(com.blokirpinjol.testlks.R.id.txtDeskripsi);
         txtPrice = (EditText)findViewById(com.blokirpinjol.testlks.R.id.txtPrice);
-        btnAdd.setOnClickListener(this);
+        if(getIntent().getExtras()!=null) {
+            Bundle bundle = getIntent().getExtras();
+            txtName.setText(bundle.getString("name"));
+            txtDesc.setText(bundle.getString("desc"));
+            txtPrice.setText(bundle.getString("price"));
+        }
+            btnAdd.setOnClickListener(this);
     }
 
     @Override

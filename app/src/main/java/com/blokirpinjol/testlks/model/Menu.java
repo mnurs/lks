@@ -1,6 +1,7 @@
 package com.blokirpinjol.testlks.model;
 
 public class Menu {
+    private int id;
     private String name;
     private String description;
     private int price;
@@ -27,5 +28,13 @@ public class Menu {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

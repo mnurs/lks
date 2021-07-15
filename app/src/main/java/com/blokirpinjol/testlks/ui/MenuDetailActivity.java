@@ -32,10 +32,10 @@ public class MenuDetailActivity extends AppCompatActivity implements MenuAdapter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.blokirpinjol.testlks.R.layout.activity_menu);
+        setContentView(R.layout.activity_menu);
         App.setmContext(this);
         getMenu();
-        FloatingActionButton fab = findViewById(com.blokirpinjol.testlks.R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,28 +44,37 @@ public class MenuDetailActivity extends AppCompatActivity implements MenuAdapter
             }
         });
         // set up the RecyclerView
+
+    }
+
+    public void setAdapter(){
         RecyclerView recyclerView = findViewById(R.id.rvMenu);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new MenuAdapter(this, menuList);
         adapter.setClickListener(this);
+        adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
-
     }
+
     @Override
     public void onItemClick(View v, int position) {
-        switch(v.getId()){
-            case R.id.btnEdit: /** Start a new Activity MyCards.java */
-                Bundle bundle = new Bundle();
-                bundle.putString("id", adapter.getItem(position));
-                Intent intent = new Intent(MenuDetailActivity.this, MenuAksiActivity.class);
-                intent.putExtras(bundle);
-                startActivity(intent);
-                break;
-            case R.id.btnDelete: /** Start a new Activity MyCards.java */
-                deleteMenu(adapter.getItem(position));
-                break;
-        }
-//        Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+//        Log.d(TAG,"MASUK");
+//        switch(v.getId()){
+//            case R.id.btnEdit: /** Start a new Activity MyCards.java */
+//                Log.d(TAG,"MASUK1");
+//                Bundle bundle = new Bundle();
+//                bundle.putString("id", String.valueOf(adapter.getItem(position)));
+//                Intent intent = new Intent(MenuDetailActivity.this, MenuAksiActivity.class);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+//                break;
+//            case R.id.btnDelete: /** Start a new Activity MyCards.java */
+//                Log.d(TAG,"MASUK2");
+//                deleteMenu(String.valueOf(adapter.getItem(position)));
+//                break;
+//        }
+////        Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
     public void getMenu(){
         /** Create handle for the RetrofitInstance interface*/
@@ -78,7 +87,8 @@ public class MenuDetailActivity extends AppCompatActivity implements MenuAdapter
                     public void onNext(List<Menu> menus) {
                         try {
                             Log.d(TAG,"Masuk");
-                            menuList.addAll(menus);
+                            menuList = menus;
+                            setAdapter();
                             Toast.makeText(getApplicationContext(),"Data Berhasil",Toast.LENGTH_LONG);
                         }catch (Exception e){
                             Log.d(TAG,e.getMessage());
@@ -109,8 +119,8 @@ public class MenuDetailActivity extends AppCompatActivity implements MenuAdapter
                             Log.d(TAG,"Masuk");
                             Toast.makeText(getApplicationContext(),"Data Berhasil",Toast.LENGTH_LONG);
                         }catch (Exception e){
-                            Log.d(TAG,e.getMessage());
-                            Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG);
+//                            Log.d(TAG,e.getMessage());
+//                            Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG);
                         }
                     }
                     @Override
@@ -122,5 +132,6 @@ public class MenuDetailActivity extends AppCompatActivity implements MenuAdapter
                         Log.d(TAG,"Selesai");
                     }
                 });
+ 
     }
 }
